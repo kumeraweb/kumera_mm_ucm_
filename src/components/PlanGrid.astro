@@ -1,0 +1,83 @@
+---
+import { getWhatsAppLink } from '../data/config'
+import { PLANES } from '../data/planes'
+---
+
+<section id="planes" class="bg-gradient-to-b from-white via-blue-50/60 to-white py-12 md:py-16">
+  <div class="mx-auto w-full max-w-6xl px-4">
+    <div class="max-w-2xl">
+      <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">Opciones comerciales</p>
+      <h2 class="mt-3 text-2xl font-extrabold text-slate-900 md:text-3xl">
+        Planes con informacion clara
+      </h2>
+      <p class="mt-3 text-base text-slate-600">
+        Planes que contemplan ambulancias privadas y unidades medicas especializadas. La prestacion
+        es realizada por proveedores externos y la asesoria es comercial e informativa.
+      </p>
+    </div>
+
+    <div class="mt-8 grid gap-5 md:grid-cols-2">
+      {PLANES.map((plan) => (
+        <article
+          class={`rounded-3xl border ${plan.destacado ? 'border-blue-200 bg-white shadow-xl shadow-blue-100/60' : 'border-slate-200 bg-white'} p-5`}
+        >
+          {plan.etiqueta && (
+            <span class="inline-flex rounded-full bg-red-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-red-600">
+              {plan.etiqueta}
+            </span>
+          )}
+          <h3 class="mt-3 text-xl font-extrabold text-slate-900">{plan.nombre.toUpperCase()}</h3>
+          {plan.precioAnterior && (
+            <p class="mt-2 text-sm font-semibold text-slate-400 line-through">
+              Antes {plan.precioAnterior}
+            </p>
+          )}
+          <div class="mt-2 flex items-end gap-2">
+            <span class="text-3xl font-extrabold text-slate-900">{plan.precio}</span>
+            <span class="text-sm font-semibold text-slate-500">{plan.unidad}</span>
+          </div>
+          <p class="mt-3 text-sm text-slate-600">
+            Planes utilizados en casos de urgencia medica, segun condiciones del proveedor.
+          </p>
+          <ul class="mt-4 grid gap-2 text-sm text-slate-600">
+            {plan.features.map((feat) => (
+              <li class="flex gap-2">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-blue-600"></span>
+                <span>{feat}</span>
+              </li>
+            ))}
+          </ul>
+          <a
+            class="mt-5 inline-flex w-full items-center justify-center rounded-full border border-blue-200 bg-white px-4 py-3 text-sm font-bold text-blue-700 shadow-sm transition-transform hover:-translate-y-0.5"
+            href={getWhatsAppLink()}
+            target="_blank"
+          >
+            Revisar condiciones del plan
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-10 overflow-hidden rounded-3xl border border-blue-100 bg-white shadow-lg">
+      <div class="grid gap-6 p-6 md:grid-cols-[0.9fr_1.1fr] md:items-center md:p-8">
+        <div>
+          <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">
+            Acompanamiento comercial
+          </p>
+          <h3 class="mt-3 text-xl font-extrabold text-slate-900">Lo que incluye el plan en la práctica</h3>
+          <p class="mt-2 text-sm text-slate-600">
+            Explicamos alcances, uso y condiciones de ambulancias privadas y unidades medicas especializadas.
+          </p>
+        </div>
+        <div class="overflow-hidden rounded-2xl border border-blue-100 bg-white">
+          <img
+            src="/images/ambu.png"
+            alt="Imagen referencial de planes de asistencia y rescate medico privado"
+            class="aspect-[4/3] w-full object-contain"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

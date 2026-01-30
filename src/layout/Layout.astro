@@ -1,0 +1,81 @@
+---
+import '../styles/global.css'
+import { CONTACT_INFO } from '../data/config'
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+const pageTitle = title
+const siteUrl = CONTACT_INFO.siteUrl
+
+const schemaData = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  url: siteUrl,
+  name: CONTACT_INFO.brandTitle,
+  description:
+    'Contratacion de planes de asistencia y rescate medico privado. Asesoria comercial para elegir planes con ambulancias privadas y unidades medicas especializadas. La prestacion es realizada por proveedores externos.',
+  priceRange: CONTACT_INFO.priceRange,
+  areaServed: {
+    '@type': 'Country',
+    name: CONTACT_INFO.areaServed
+  },
+  serviceType: 'Asesoria comercial',
+  sameAs: [`https://wa.me/${CONTACT_INFO.phone}`],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'sales',
+    telephone: `+${CONTACT_INFO.phone}`
+  }
+}
+---
+
+<!doctype html>
+<html lang="es-CL" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content="Contratacion de planes de asistencia y rescate medico privado. Asesoria comercial para elegir planes con ambulancias privadas y unidades medicas especializadas. La prestacion es realizada por proveedores externos."
+    />
+    <link rel="canonical" href={siteUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta
+      property="og:description"
+      content="Contratacion de planes de asistencia y rescate medico privado. Asesoria comercial para elegir planes con ambulancias privadas y unidades medicas especializadas. La prestacion es realizada por proveedores externos."
+    />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta
+      name="twitter:description"
+      content="Contratacion de planes de asistencia y rescate medico privado. Asesoria comercial para elegir planes con ambulancias privadas y unidades medicas especializadas. La prestacion es realizada por proveedores externos."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+  <body class="bg-gradient-to-b from-slate-50 via-white to-white text-slate-900 font-['Manrope',_sans-serif] antialiased">
+    <slot />
+    <footer class="mt-20 bg-slate-900 text-white py-12 px-4">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-slate-300 text-sm leading-relaxed">
+          <strong>Aviso Legal:</strong> {CONTACT_INFO.legalDisclaimerLong}
+        </p>
+        <p class="text-slate-500 text-xs mt-4">
+          © {new Date().getFullYear()} {CONTACT_INFO.brandTitle} - Asesoria Comercial.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

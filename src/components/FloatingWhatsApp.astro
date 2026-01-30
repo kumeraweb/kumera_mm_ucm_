@@ -1,0 +1,21 @@
+---
+import { CONTACT_INFO, getWhatsAppLink } from '../data/config'
+---
+
+<div class="fixed bottom-5 right-4 z-50">
+  <div class="grid gap-3">
+    <a
+      href={getWhatsAppLink()}
+      target="_blank"
+      class="flex min-h-[52px] items-center justify-center gap-3 rounded-full bg-emerald-500 px-5 text-sm md:text-base font-extrabold text-white shadow-2xl transition-transform hover:-translate-y-0.5"
+    >
+      WhatsApp comercial
+    </a>
+    <a
+      href={`tel:${CONTACT_INFO.phone}`}
+      class="flex min-h-[52px] items-center justify-center gap-3 rounded-full bg-white px-5 text-sm md:text-base font-extrabold text-slate-900 shadow-2xl transition-transform hover:-translate-y-0.5"
+    >
+      Consulta comercial
+    </a>
+  </div>
+</div>
