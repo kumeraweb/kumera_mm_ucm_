@@ -13,36 +13,30 @@ export interface PlanRescate {
 export const PLANES: PlanRescate[] = [
   {
     id: 'plan-full',
-    nombre: 'Plan Full',
-    precioAnterior: '0,90 UF',
+    nombre: 'FULL RESCUE',
     precio: '0,59',
-    unidad: 'UF / mensual',
-    descripcion: 'Beneficios del plan y condiciones claras.',
+    unidad: 'UF',
+    descripcion: 'Emergencias y Urgencias Médicas.',
     features: [
-      'Cobertura del plan segun edad y condiciones del proveedor oficial.',
-      'Activacion y uso conforme a reglas contractuales.',
-      'Servicios incluidos segun el plan contratado.',
-      'Detalle transparente de copagos y exclusiones.',
-      'Orientacion comercial durante la contratacion.'
+      'Rescate de Emergencias Médicas.',
+      'Atención Programada de Urgencias Médicas.',
+      'Orientación de Salud Telefónica.'
     ],
     destacado: true,
-    etiqueta: 'Oferta Web'
+    etiqueta: 'Más Contratado'
   },
   {
     id: 'plan-senior',
-    nombre: 'Plan Senior',
-    precioAnterior: '1,60 UF',
-    precio: '1,2',
-    unidad: 'UF / mensual',
-    descripcion: 'Condiciones preferentes para perfiles senior.',
+    nombre: 'SENIOR',
+    precio: '1,0',
+    unidad: 'UF',
+    descripcion: 'Protección para adultos desde 75 años.',
     features: [
-      'Condiciones contractuales definidas por proveedor oficial.',
-      'Cobertura del plan con reglas de uso claras.',
-      'Beneficios detallados en la propuesta comercial.',
-      'Transparencia en limites, copagos y exclusiones.',
-      'Gestion de contratacion guiada por ejecutiva autorizada.'
+      'Rescate ante Emergencias con Riesgo Vital y/o Urgencias Médicas.',
+      'Asistencia de salud COPAGO $0 en Centros Médicos.',
+      'Hasta 25% de descuento en Servicios de Salud a Domicilio.'
     ],
     destacado: false,
-    etiqueta: 'Ideal Adulto Mayor'
+    etiqueta: 'Adultos 75+'
   }
 ]

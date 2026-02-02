@@ -1,23 +1,36 @@
 ---
-import { CONTACT_INFO } from '../data/config'
+import { CONTACT_INFO } from "../data/config";
 ---
 
-<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
-  <div class="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3">
+<header
+  class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur"
+>
+  <div
+    class="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3"
+  >
     <div class="flex min-w-0 flex-col leading-tight">
-      <span class="text-base font-extrabold tracking-tight text-slate-900 sm:text-lg md:text-2xl">
-        <span class="block sm:hidden">Planes Rescates</span>
+      <span
+        class="text-base font-extrabold tracking-tight text-slate-900 sm:text-lg md:text-2xl"
+      >
+        <span class="block sm:hidden">Planes Rescate</span>
         <span class="hidden sm:block truncate">{CONTACT_INFO.brandTitle}</span>
       </span>
-      <span class="hidden text-xs font-bold uppercase tracking-[0.24em] text-slate-500 sm:block">
-        Ejecutiva autorizada
+      <span
+        class="hidden text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 sm:block"
+      >
+        Contratación Online · No Emergencia
       </span>
     </div>
-    <a
-      class="shrink-0 whitespace-nowrap rounded-full bg-blue-600 px-4 py-2 text-xs font-extrabold text-white shadow-lg shadow-blue-600/20 transition-transform hover:-translate-y-0.5 sm:px-5 sm:py-3 sm:text-sm"
-      href={`tel:${CONTACT_INFO.phone}`}
-    >
-      Consulta comercial
-    </a>
+    <div class="flex items-center gap-4">
+      <p class="hidden text-[10px] uppercase font-bold text-red-600 lg:block">
+        No Emergencias Inmediatas
+      </p>
+      <a
+        class="shrink-0 whitespace-nowrap rounded-full bg-red-600 px-4 py-2 text-xs font-extrabold text-white shadow-lg transition-transform hover:-translate-y-0.5 sm:px-6 sm:py-3 sm:text-sm"
+        href={`tel:${CONTACT_INFO.phone}`}
+      >
+        Cotiza aquí
+      </a>
+    </div>
   </div>
 </header>

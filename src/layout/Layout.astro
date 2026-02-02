@@ -1,35 +1,35 @@
 ---
-import '../styles/global.css'
-import { CONTACT_INFO } from '../data/config'
+import "../styles/global.css";
+import { CONTACT_INFO } from "../data/config";
 
 interface Props {
-  title: string
+  title: string;
 }
 
-const { title } = Astro.props
-const pageTitle = title
-const siteUrl = CONTACT_INFO.siteUrl
+const { title } = Astro.props;
+const pageTitle = title;
+const siteUrl = CONTACT_INFO.siteUrl;
 
 const schemaData = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
   url: siteUrl,
   name: CONTACT_INFO.brandTitle,
   description:
-    'Contratacion de planes de asistencia y rescate medico privado. Asesoria comercial para elegir planes con ambulancias privadas y unidades medicas especializadas. La prestacion es realizada por proveedores externos.',
+    "Landing comercial para contratación de planes de rescate en ambulancias privadas y servicios extrahospitalarios. No es servicio de emergencia ni sistema de salud.",
   priceRange: CONTACT_INFO.priceRange,
   areaServed: {
-    '@type': 'Country',
-    name: CONTACT_INFO.areaServed
+    "@type": "Country",
+    name: CONTACT_INFO.areaServed,
   },
-  serviceType: 'Asesoria comercial',
+  serviceType: "Contratación de planes de rescate y ambulancias privadas",
   sameAs: [`https://wa.me/${CONTACT_INFO.phone}`],
   contactPoint: {
-    '@type': 'ContactPoint',
-    contactType: 'sales',
-    telephone: `+${CONTACT_INFO.phone}`
-  }
-}
+    "@type": "ContactPoint",
+    contactType: "sales",
+    telephone: `+${CONTACT_INFO.phone}`,
+  },
+};
 ---
 
 <!doctype html>
@@ -37,25 +37,25 @@ const schemaData = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
+    <title>{pageTitle} | Contratación Online</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta
       name="description"
-      content="Contratacion de planes de asistencia y rescate medico privado. Asesoria comercial para elegir planes con ambulancias privadas y unidades medicas especializadas. La prestacion es realizada por proveedores externos."
+      content="Landing comercial para contratación de planes de rescate en ambulancias privadas y servicios extrahospitalarios. No es servicio de emergencia ni sistema de salud."
     />
     <link rel="canonical" href={siteUrl} />
-    <meta property="og:title" content={pageTitle} />
+    <meta property="og:title" content={`${pageTitle} | Contratación Online`} />
     <meta
       property="og:description"
-      content="Contratacion de planes de asistencia y rescate medico privado. Asesoria comercial para elegir planes con ambulancias privadas y unidades medicas especializadas. La prestacion es realizada por proveedores externos."
+      content="Landing comercial para contratación de planes de rescate en ambulancias privadas y servicios extrahospitalarios. No es servicio de emergencia ni sistema de salud."
     />
     <meta property="og:url" content={siteUrl} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:title" content={`${pageTitle} | Contratación Online`} />
     <meta
       name="twitter:description"
-      content="Contratacion de planes de asistencia y rescate medico privado. Asesoria comercial para elegir planes con ambulancias privadas y unidades medicas especializadas. La prestacion es realizada por proveedores externos."
+      content="Landing comercial para contratación de planes de rescate en ambulancias privadas y servicios extrahospitalarios. No es servicio de emergencia ni sistema de salud."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -66,20 +66,22 @@ const schemaData = {
     <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
 
     <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-17888384535"
-    ></script>
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-17888384535"></script>
     <script is="">
-      window.dataLayer = window.dataLayer || []
+      window.dataLayer = window.dataLayer || [];
       function gtag() {
-        dataLayer.push(arguments)
+        dataLayer.push(arguments);
       }
-      gtag('js', new Date())
+      gtag("js", new Date());
 
-      gtag('config', 'AW-17888384535')
+      gtag("config", "AW-17888384535");
     </script>
   </head>
   <body
-    class="bg-gradient-to-b from-slate-50 via-white to-white text-slate-900 font-['Manrope',_sans-serif] antialiased"
+    class="bg-gradient-to-b from-red-50 via-white to-blue-50 text-slate-900 font-['Manrope',_sans-serif] antialiased"
   >
     <slot />
     <footer class="mt-20 bg-slate-900 text-white py-12 px-4">

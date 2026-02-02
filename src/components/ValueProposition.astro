@@ -1,40 +1,49 @@
 <section class="py-12 md:py-16">
   <div class="mx-auto w-full max-w-6xl px-4">
-    <div class="max-w-2xl">
-      <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">
-        Como te ayuda la asesoria
-      </p>
-      <h2 class="mt-3 text-2xl font-extrabold text-slate-900 md:text-3xl">
-        Claridad antes de contratar
-      </h2>
-      <p class="mt-3 text-base text-slate-600">
-        Resolvemos dudas y ordenamos la informacion para que decidas con tranquilidad.
-      </p>
-    </div>
-    <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-      <div class="rounded-2xl border border-blue-100 bg-white p-5 shadow-sm">
-        <h3 class="text-lg font-bold text-slate-900">Comparacion simple</h3>
-        <p class="mt-2 text-sm text-slate-600">
-          Revisamos planes que incluyen ambulancias privadas y unidades medicas especializadas.
+    <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div>
+        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-blue-700">
+          Qué estás contratando
         </p>
+        <h2 class="mt-3 text-3xl font-extrabold text-slate-900 md:text-4xl">
+          Planes de rescate y servicios extrahospitalarios
+        </h2>
+        <p class="mt-4 text-base text-slate-600">
+          La contratación es comercial y está enfocada en planes de rescate en ambulancias privadas,
+          traslados programados y cobertura extrahospitalaria. No es seguro ni sistema de salud.
+        </p>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2">
+          {
+            [
+              'Planes de rescate en ambulancias privadas',
+              'Ambulancias programadas y equipadas',
+              'Operativos preventivos de salud',
+              'Rescate colectivo',
+              'Servicios a domicilio',
+              'Traslados programados',
+              'Cobertura extrahospitalaria mediante planes de contratación'
+            ].map((item) => (
+              <div class="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-700 shadow-sm">
+                {item}
+              </div>
+            ))
+          }
+        </div>
       </div>
-      <div class="rounded-2xl border border-red-100 bg-white p-5 shadow-sm">
-        <h3 class="text-lg font-bold text-slate-900">Orientacion paso a paso</h3>
-        <p class="mt-2 text-sm text-slate-600">
-          Explicamos requisitos, limites y costos con foco comercial e informativo.
-        </p>
-      </div>
-      <div class="rounded-2xl border border-blue-100 bg-white p-5 shadow-sm">
-        <h3 class="text-lg font-bold text-slate-900">Acompanamiento real</h3>
-        <p class="mt-2 text-sm text-slate-600">
-          Gestion comercial guiada para contratar planes con proveedores externos.
-        </p>
-      </div>
-      <div class="rounded-2xl border border-red-100 bg-white p-5 shadow-sm">
-        <h3 class="text-lg font-bold text-slate-900">Decision informada</h3>
-        <p class="mt-2 text-sm text-slate-600">
-          Tu eliges el proveedor externo con la informacion clara y por escrito.
-        </p>
+      <div class="rounded-3xl border border-blue-100 bg-white p-4 shadow-xl">
+        <!-- Dummy image placeholder for replacement -->
+        <img
+          src="/images/2.png"
+          alt="Imagen dummy de ambulancia privada (placeholder)"
+          class="w-full rounded-2xl object-cover"
+          loading="lazy"
+        />
+        <div class="mt-4 grid gap-3 rounded-2xl bg-blue-50 p-4 text-sm text-slate-700">
+          <p class="font-bold text-blue-800">Cómo contratar en 3 pasos</p>
+          <p>1. Elige tu plan en la sección principal.</p>
+          <p>2. Cotiza con una ejecutiva comercial.</p>
+          <p>3. Formaliza tu contratación de plan de rescate.</p>
+        </div>
       </div>
     </div>
   </div>
